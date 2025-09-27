@@ -28,6 +28,7 @@ export default function LoginScreen() {
       await AsyncStorage.setItem("userEmail", em);
       await AsyncStorage.setItem("userPassword", pass);
       
+      
   }
   return(
     <View className="flex-1 bg-white px-6">
