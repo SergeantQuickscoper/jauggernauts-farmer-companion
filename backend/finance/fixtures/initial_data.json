@@ -1,0 +1,42 @@
+[
+    {
+        "model": "finance.expensecategory",
+        "pk": 1,
+        "fields": {
+            "name": "Seeds",
+            "description": "Cost of seeds and seedlings",
+            "is_active": true,
+            "created_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "finance.expensecategory",
+        "pk": 2,
+        "fields": {
+            "name": "Fertilizers",
+            "description": "Fertilizer and soil amendments",
+            "is_active": true,
+            "created_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "finance.incomecategory",
+        "pk": 1,
+        "fields": {
+            "name": "Crop Sales",
+            "description": "Revenue from crop sales",
+            "is_active": true,
+            "created_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "finance.incomecategory",
+        "pk": 2,
+        "fields": {
+            "name": "Government Subsidies",
+            "description": "Government subsidies and support payments",
+            "is_active": true,
+            "created_at": "2024-01-01T00:00:00Z"
+        }
+    }
+]
