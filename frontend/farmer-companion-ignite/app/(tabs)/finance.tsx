@@ -3,8 +3,7 @@ import {
   View, 
   Text, 
   ScrollView, 
-  TouchableOpacity,
-  FlatList 
+  TouchableOpacity
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import FinanceEntry, { FinanceEntryData } from '@/components/finance/FinanceEntry';
@@ -180,30 +179,26 @@ export default function Finance() {
             </TouchableOpacity>
           </View>
           
-          <FlatList
-            data={filteredEntries}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
+          {filteredEntries.length > 0 ? (
+            filteredEntries.map((item) => (
               <FinanceEntry 
+                key={item.id}
                 entry={item} 
                 onPress={() => {
                   // Could add edit functionality here
-                  console.log('Edit entry:', item.id);
                 }}
               />
-            )}
-            showsVerticalScrollIndicator={false}
-            ListEmptyComponent={
-              <View className="py-8 items-center">
-                <Text className="text-gray-500 text-center">
-                  No {filterType === 'all' ? 'transactions' : filterType} found
-                </Text>
-                <Text className="text-gray-400 text-sm mt-2">
-                  Tap &quot;+ Add Entry&quot; to get started
-                </Text>
-              </View>
-            }
-          />
+            ))
+          ) : (
+            <View className="py-8 items-center">
+              <Text className="text-gray-500 text-center">
+                No {filterType === 'all' ? 'transactions' : filterType} found
+              </Text>
+              <Text className="text-gray-400 text-sm mt-2">
+                Tap &quot;+ Add Entry&quot; to get started
+              </Text>
+            </View>
+          )}
         </View>
       </View>
       </ScrollView>
