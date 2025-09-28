@@ -15,7 +15,7 @@ export default function LoginScreen() {
     const em = email
     const pass = password
     try {
-        await fetch(process.env.BACKEND_URL + "user/login", {
+        await fetch(process.env.EXPO_PUBLIC_BACKEND_URL + "user/login", {
       method: "POST",
       headers: {
          "Content-Type": "application/json",

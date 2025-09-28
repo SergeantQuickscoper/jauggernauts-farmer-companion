@@ -272,7 +272,6 @@ export default function ChatScreen() {
         )}
       </View>
       
-      {/* AI message actions */}
       {item.sender === "ai" && item.text && (
         <TouchableOpacity
           onPress={() => speakText(item.text!)}
@@ -299,7 +298,6 @@ export default function ChatScreen() {
         <Text className="text-green-100 text-base">Ask questions, share photos, or use voice chat</Text>
       </LinearGradient>
 
-      {/* Messages Area */}
       <ScrollView
         ref={scrollViewRef}
         className="flex-1 px-4 py-4"
@@ -319,7 +317,6 @@ export default function ChatScreen() {
         )}
       </ScrollView>
 
-      {/* Input Area */}
       <View className="bg-white border-t border-gray-200 px-4 py-3">
         {/* Quick Actions */}
         <View className="flex-row justify-center mb-3">

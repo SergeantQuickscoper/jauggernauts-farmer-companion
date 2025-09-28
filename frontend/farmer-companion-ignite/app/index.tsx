@@ -4,6 +4,7 @@
   import AsyncStorage from "@react-native-async-storage/async-storage";
   import { router } from "expo-router";
 
+
   export default function LoginScreen() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -11,11 +12,11 @@
 
     const handleLogin = async() => {
       setIsLoading(true);
-      router.replace("/(tabs)");
       const em = email
       const pass = password
+      console.log(process.env.EXPO_PUBLIC_BACKEND_URL)
       try {
-          await fetch(process.env.BACKEND_URL + "user/login", {
+          await fetch(process.env.EXPO_PUBLIC_BACKEND_URL + "user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,11 +29,12 @@
       .then((response) => console.log(response.json()))
         } catch (error) {
           console.log(error);
+          setIsLoading(false);
           return;
         }
         await AsyncStorage.setItem("userEmail", em);
         await AsyncStorage.setItem("userPassword", pass);
-        setIsLoading(false);
+        router.replace("/(tabs)");
     }
 
     return(
