@@ -24,4 +24,5 @@ urlpatterns = [
 
     path('user/', include('user.urls')),
     path('api/', include('finance.urls')),
+    path('speech/', include('handleSpeech.urls')),
 ]
